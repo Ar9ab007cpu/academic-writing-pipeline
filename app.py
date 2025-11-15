@@ -4,6 +4,10 @@ import base64
 import streamlit as st
 from openai import OpenAI
 
+api_key = st.secrets.get("OPENAI_API_KEY") or os.environ.get("OPENAI_API_KEY")
+if not api_key:
+    st.error("OPENAI_API_KEY is not set. Please add it in Streamlit Secrets.")
+    st.stop()
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 # -------- Agent 1: Job Summary --------
