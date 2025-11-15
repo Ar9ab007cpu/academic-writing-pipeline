@@ -1,0 +1,8 @@
+streamlit
+openai>=1.40.0
+PyPDF2
+python-docx
+python-pptx
+pandas
+openpyxl
+certifi
